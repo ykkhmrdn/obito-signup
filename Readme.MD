@@ -1,7 +1,5 @@
 # Obito Sign-up UI Challenge
 
-![Obito Sign-up Screenshot](https://i.imgur.com/XyzABC.png)
-
 ## Overview
 
 This project is a UI challenge submission for the Jr UI Engineer Remote Internship at BuildWithAngga. It's a pixel-perfect implementation of the Obito Sign-up Online Learning Platform web design, focusing on responsive layout, clean code, and attention to detail.
