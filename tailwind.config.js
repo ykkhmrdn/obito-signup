@@ -4,8 +4,6 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Tailwind akan menggunakan ini tetapi kita juga menggunakan hardcoded
-        // hex codes di HTML untuk konsistensi total
         dark: "#0A0723",
         primary: "#2F6A62",
         "primary-dark": "#265249",
@@ -21,7 +19,6 @@ export default {
         sans: ["Poppins", "sans-serif"],
       },
       spacing: {
-        // Tambahkan spacing custom yang mungkin dibutuhkan
         18: "4.5rem",
         30: "7.5rem",
       },

@@ -123,120 +123,167 @@
     </div>
   </header>
 
-  <!-- JavaScript for Mobile Menu Toggle -->
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      const mobileMenuButton = document.getElementById('mobile-menu-button');
-      const mobileMenu = document.getElementById('mobile-menu');
-
-      mobileMenuButton.addEventListener('click', function () {
-        mobileMenu.classList.toggle('hidden');
-      });
-    });
-  </script>
 
   <!-- Main Content -->
-  <main class="py-12">
-    <div class="container mx-auto px-4 md:px-8">
-      <div class="flex flex-wrap -mx-4">
-        <!-- Sign Up Form -->
-        <div class="w-full md:w-1/2 px-4">
-          <div class="bg-white rounded-xl p-8 max-w-md mx-auto shadow-sm">
-            <h2 class="text-2xl font-bold text-[#0A0723] mb-8">Upgrade Your Skills</h2>
+  <main class="flex flex-col md:flex-row h-screen">
+    <!-- Form Section (Left) -->
+    <div class="w-full md:w-1/2 bg-[#F8FAF9] p-4 md:p-8 flex items-center justify-center">
+      <div class="w-full max-w-xl rounded-[20px] border border-[#EAECEE] bg-white p-8">
+        <!-- Photo Container -->
+        <div class="mb-8 relative">
+          <h2 class="text-2xl font-bold text-[#0A0723] mb-6">Upgrade Your Skills</h2>
 
-            <!-- Profile Photo -->
-            <div class="mb-8 flex justify-center">
-              <div class="relative">
-                <img id="profile-photo" src="" alt=""
-                  class="w-24 h-24 rounded-full bg-[#F8FAF9] object-cover mx-auto hidden">
-                <div id="photo-placeholder"
-                  class="w-24 h-24 rounded-full bg-[#F8FAF9] flex flex-col items-center justify-center text-gray-500 cursor-pointer">
-                  <span class="text-sm font-medium">Add</span>
-                  <span class="text-sm font-medium">Photo</span>
-                </div>
-                <button id="delete-photo"
-                  class="absolute -top-2 -right-2 bg-[#EF372B] text-white text-xs py-1 px-2 rounded-full hidden">DELETE
-                  PHOTO</button>
-              </div>
+          <!-- Variation 1: Empty placeholder (Add Photo) -->
+          <div id="photo-container" class="flex">
+            <div id="photo-placeholder"
+              class="w-24 h-24 rounded-full flex flex-col items-center justify-center text-gray-500 cursor-pointer border border-[#EAECEE]">
+              <span class="text-sm font-medium text-[#0A0723]">Add</span>
+              <span class="text-sm font-medium text-[#0A0723]">Photo</span>
             </div>
+          </div>
 
-            <!-- Form -->
-            <form id="signup-form">
-              <!-- Complete Name -->
-              <div class="mb-6">
-                <label for="name" class="block text-[#0A0723] font-medium mb-2">Complete Name</label>
-                <div class="relative">
-                  <span class="absolute inset-y-0 left-0 pl-4 flex items-center text-gray-500">
-                    <i class="fas fa-user"></i>
-                  </span>
-                  <input type="text" id="name" placeholder="Type your valid email address"
-                    class="w-full h-12 pl-10 pr-4 border border-[#EAECEE] rounded-full focus:outline-none focus:border-[#2F6A62] text-[#0A0723]">
-                </div>
-              </div>
-
-              <!-- Occupation -->
-              <div class="mb-6">
-                <label for="occupation" class="block text-[#0A0723] font-medium mb-2">Occupation</label>
-                <div class="relative">
-                  <span class="absolute inset-y-0 left-0 pl-4 flex items-center text-gray-500">
-                    <i class="fas fa-briefcase"></i>
-                  </span>
-                  <input type="text" id="occupation" value="Programmer"
-                    class="w-full h-12 pl-10 pr-4 border border-[#EAECEE] rounded-full focus:outline-none focus:border-[#2F6A62] text-[#0A0723]">
-                </div>
-              </div>
-
-              <!-- Email Address -->
-              <div class="mb-6">
-                <label for="email" class="block text-[#0A0723] font-medium mb-2">Email Address</label>
-                <div class="relative">
-                  <span class="absolute inset-y-0 left-0 pl-4 flex items-center text-gray-500">
-                    <i class="fas fa-envelope"></i>
-                  </span>
-                  <input type="email" id="email" placeholder="Type your valid email address"
-                    class="w-full h-12 pl-10 pr-4 border border-[#EAECEE] rounded-full focus:outline-none focus:border-[#2F6A62] text-[#0A0723]">
-                </div>
-              </div>
-
-              <!-- Password -->
-              <div class="mb-6">
-                <label for="password" class="block text-[#0A0723] font-medium mb-2">Password</label>
-                <div class="relative">
-                  <span class="absolute inset-y-0 left-0 pl-4 flex items-center text-gray-500">
-                    <i class="fas fa-lock"></i>
-                  </span>
-                  <input type="password" id="password" placeholder="Type your valid email address"
-                    class="w-full h-12 pl-10 pr-4 border border-[#EAECEE] rounded-full focus:outline-none focus:border-[#2F6A62] text-[#0A0723]">
-                </div>
-              </div>
-
-              <!-- Confirm Password -->
-              <div class="mb-8">
-                <label for="confirm-password" class="block text-[#0A0723] font-medium mb-2">Confirm Password</label>
-                <div class="relative">
-                  <span class="absolute inset-y-0 left-0 pl-4 flex items-center text-gray-500">
-                    <i class="fas fa-lock"></i>
-                  </span>
-                  <input type="password" id="confirm-password" placeholder="Type your valid email address"
-                    class="w-full h-12 pl-10 pr-4 border border-[#EAECEE] rounded-full focus:outline-none focus:border-[#2F6A62] text-[#0A0723]">
-                </div>
-              </div>
-
-              <!-- Submit Button -->
-              <button type="submit"
-                class="w-full h-12 bg-[#2F6A62] text-white font-medium rounded-full hover:bg-[#265249] transition duration-300">Create
-                My Account</button>
-            </form>
+          <!-- Variation 2: With photo and delete button -->
+          <div id="photo-with-delete" class="hidden flex items-center">
+            <img id="profile-photo" src="" alt="Profile" class="w-24 h-24 rounded-full object-cover">
+            <div id="delete-photo"
+              class="ml-2 flex items-center px-3 py-1.5 rounded-full bg-[#FFE3E1] text-[#EF372B] text-xs cursor-pointer font-bold">
+              DELETE PHOTO
+            </div>
           </div>
         </div>
 
-        <!-- Image Section -->
-        <div class="hidden md:block md:w-1/2 px-4">
-          <img
-            src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80"
-            alt="People working on programming" class="rounded-lg h-full w-full object-cover">
-        </div>
+        <!-- Form -->
+        <form id="signup-form" novalidate>
+          <!-- Complete Name -->
+          <div class="mb-6">
+            <label for="name" class="block text-[#0A0723] font-medium mb-2">Complete Name</label>
+            <div class="relative">
+              <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <path
+                    d="M10.1334 9.05833C10.05 9.05 9.95005 9.05 9.85838 9.05833C7.87505 8.99166 6.30005 7.36666 6.30005 5.36666C6.30005 3.325 7.95005 1.66666 10 1.66666C12.0417 1.66666 13.7 3.325 13.7 5.36666C13.6917 7.36666 12.1167 8.99166 10.1334 9.05833Z"
+                    stroke="#0A0723" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                  <path
+                    d="M5.96672 12.1333C3.95006 13.4833 3.95006 15.6833 5.96672 17.025C8.25839 18.5583 12.0167 18.5583 14.3084 17.025C16.3251 15.675 16.3251 13.475 14.3084 12.1333C12.0251 10.6083 8.26672 10.6083 5.96672 12.1333Z"
+                    stroke="#0A0723" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </div>
+              <input type="text" id="name" placeholder="Type your valid email address" required
+                class="w-full h-12 pl-10 pr-4 border border-[#EAECEE] rounded-full focus:outline-none focus:border-[#2F6A62] text-[#0A0723]">
+            </div>
+            <p class="mt-1 text-[#EF372B] text-sm hidden" id="name-error">Please enter your name</p>
+          </div>
+
+          <!-- Occupation -->
+          <div class="mb-6">
+            <label for="occupation" class="block text-[#0A0723] font-medium mb-2">Occupation</label>
+            <div class="relative">
+              <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <path
+                    d="M6.66673 18.3333H13.3334C16.6834 18.3333 17.2834 16.9917 17.4584 15.3583L18.0834 8.69167C18.3084 6.65833 17.7251 5 14.1667 5H5.83339C2.27506 5 1.69173 6.65833 1.91673 8.69167L2.54173 15.3583C2.71673 16.9917 3.31673 18.3333 6.66673 18.3333Z"
+                    stroke="#0A0723" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                  <path
+                    d="M6.66663 5V4.33333C6.66663 2.85833 6.66663 1.66667 9.33329 1.66667H10.6666C13.3333 1.66667 13.3333 2.85833 13.3333 4.33333V5"
+                    stroke="#0A0723" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                  <path
+                    d="M11.6667 10.8333V11.6667C11.6667 11.675 11.6667 11.675 11.6667 11.6833C11.6667 12.5917 11.6584 13.3333 10 13.3333C8.35004 13.3333 8.33337 12.6 8.33337 11.6917V10.8333C8.33337 10 8.33337 10 9.16671 10H10.8334C11.6667 10 11.6667 10 11.6667 10.8333Z"
+                    stroke="#0A0723" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                  <path d="M18.0416 9.16667C16.1166 10.5667 13.9166 11.4 11.6666 11.6833" stroke="#0A0723"
+                    stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M2.18335 9.39167C4.05835 10.675 6.17502 11.45 8.33335 11.6917" stroke="#0A0723"
+                    stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </div>
+              <input type="text" id="occupation" value="Programmer" required
+                class="w-full h-12 pl-10 pr-4 border border-[#EAECEE] rounded-full focus:outline-none focus:border-[#2F6A62] text-[#0A0723]">
+            </div>
+            <p class="mt-1 text-[#EF372B] text-sm hidden" id="occupation-error">Please enter your occupation</p>
+          </div>
+
+          <!-- Email Address -->
+          <div class="mb-6">
+            <label for="email" class="block text-[#0A0723] font-medium mb-2">Email Address</label>
+            <div class="relative">
+              <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <path
+                    d="M14.1666 17.0833H5.83329C3.33329 17.0833 1.66663 15.8333 1.66663 12.9167V7.08333C1.66663 4.16666 3.33329 2.91666 5.83329 2.91666H14.1666C16.6666 2.91666 18.3333 4.16666 18.3333 7.08333V12.9167C18.3333 15.8333 16.6666 17.0833 14.1666 17.0833Z"
+                    stroke="#0A0723" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                  <path d="M14.1667 7.5L11.5584 9.58333C10.7 10.2667 9.2917 10.2667 8.43337 9.58333L5.83337 7.5"
+                    stroke="#0A0723" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                </svg>
+              </div>
+              <input type="email" id="email" placeholder="Type your valid email address" required
+                class="w-full h-12 pl-10 pr-4 border border-[#EAECEE] rounded-full focus:outline-none focus:border-[#2F6A62] text-[#0A0723]">
+            </div>
+            <p class="mt-1 text-[#EF372B] text-sm hidden" id="email-error">Please enter a valid email address</p>
+          </div>
+
+          <!-- Password -->
+          <div class="mb-6">
+            <label for="password" class="block text-[#0A0723] font-medium mb-2">Password</label>
+            <div class="relative">
+              <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <path
+                    d="M8.74167 1.85833L4.58334 3.425C3.62501 3.78333 2.84167 4.91666 2.84167 5.93333V12.125C2.84167 13.1083 3.49167 14.4 4.28334 14.9917L7.86667 17.6667C9.04167 18.55 10.975 18.55 12.15 17.6667L15.7333 14.9917C16.525 14.4 17.175 13.1083 17.175 12.125V5.93333C17.175 4.90833 16.3917 3.775 15.4333 3.41666L11.275 1.85833C10.5667 1.6 9.43334 1.6 8.74167 1.85833Z"
+                    stroke="#0A0723" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                  <path
+                    d="M10 10.4167C10.9205 10.4167 11.6667 9.67047 11.6667 8.74999C11.6667 7.82952 10.9205 7.08333 10 7.08333C9.07957 7.08333 8.33337 7.82952 8.33337 8.74999C8.33337 9.67047 9.07957 10.4167 10 10.4167Z"
+                    stroke="#0A0723" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                  <path d="M10 10.4167V12.9167" stroke="#0A0723" stroke-width="1.5" stroke-miterlimit="10"
+                    stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </div>
+              <input type="password" id="password" placeholder="Type your password" required minlength="8"
+                class="w-full h-12 pl-10 pr-4 border border-[#EAECEE] rounded-full focus:outline-none focus:border-[#2F6A62] text-[#0A0723]">
+            </div>
+            <p class="mt-1 text-[#EF372B] text-sm hidden" id="password-error">Password must be at least 8 characters</p>
+          </div>
+
+          <!-- Confirm Password -->
+          <div class="mb-8">
+            <label for="confirm-password" class="block text-[#0A0723] font-medium mb-2">Confirm Password</label>
+            <div class="relative">
+              <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <path
+                    d="M8.74167 1.85833L4.58334 3.425C3.62501 3.78333 2.84167 4.91666 2.84167 5.93333V12.125C2.84167 13.1083 3.49167 14.4 4.28334 14.9917L7.86667 17.6667C9.04167 18.55 10.975 18.55 12.15 17.6667L15.7333 14.9917C16.525 14.4 17.175 13.1083 17.175 12.125V5.93333C17.175 4.90833 16.3917 3.775 15.4333 3.41666L11.275 1.85833C10.5667 1.6 9.43334 1.6 8.74167 1.85833Z"
+                    stroke="#0A0723" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                  <path
+                    d="M10 10.4167C10.9205 10.4167 11.6667 9.67047 11.6667 8.74999C11.6667 7.82952 10.9205 7.08333 10 7.08333C9.07957 7.08333 8.33337 7.82952 8.33337 8.74999C8.33337 9.67047 9.07957 10.4167 10 10.4167Z"
+                    stroke="#0A0723" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                  <path d="M10 10.4167V12.9167" stroke="#0A0723" stroke-width="1.5" stroke-miterlimit="10"
+                    stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </div>
+              <input type="password" id="confirm-password" placeholder="Retype your password" required
+                class="w-full h-12 pl-10 pr-4 border border-[#EAECEE] rounded-full focus:outline-none focus:border-[#2F6A62] text-[#0A0723]">
+            </div>
+            <p class="mt-1 text-[#EF372B] text-sm hidden" id="confirm-password-error">Please confirm your password</p>
+          </div>
+
+          <!-- Submit Button -->
+          <button type="submit"
+            class="w-full h-12 bg-[#2F6A62] text-white font-medium rounded-full hover:bg-[#265249] transition duration-300">Create
+            My Account</button>
+        </form>
       </div>
+    </div>
+
+    <!-- Image Section (Right) -->
+    <div class="hidden md:block md:w-1/2 h-full overflow-hidden">
+      <img
+        src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80"
+        alt="People working on programming" class="w-full h-full object-cover">
     </div>
   </main>
 
